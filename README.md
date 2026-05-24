@@ -35,13 +35,7 @@ wrangler login
 
 ### 4. 配置
 
-把 `wrangler.toml.example` 复制一份，命名为 `wrangler.toml`：
-
-```bash
-cp wrangler.toml.example wrangler.toml
-```
-
-然后创建 KV 存储：
+创建 KV 存储：
 
 ```bash
 wrangler kv namespace create STORE
@@ -53,7 +47,7 @@ wrangler kv namespace create STORE
 id = "abc123xxxxxxxxxxxxxxxx"
 ```
 
-打开 `wrangler.toml`，把 `你的KV_NAMESPACE_ID` 替换成这串 ID。
+打开项目里的 `wrangler.toml.example`，另存为 `wrangler.toml`，然后把里面的 `你的KV_NAMESPACE_ID` 改成你刚才得到的那串 ID。
 
 ### 5. 部署
 
