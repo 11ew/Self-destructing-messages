@@ -33,25 +33,27 @@ wrangler login
 
 浏览器会弹出授权页面，点击允许。
 
-### 4. 创建 KV 存储
+### 4. 配置
+
+把 `wrangler.toml.example` 复制一份，命名为 `wrangler.toml`：
+
+```bash
+cp wrangler.toml.example wrangler.toml
+```
+
+然后创建 KV 存储：
 
 ```bash
 wrangler kv namespace create STORE
 ```
 
-命令会输出类似：
-```
-{ binding = "STORE", id = "xxxxxxxxxxxxxxxxxxxx" }
-```
+命令会输出一串 ID，类似：
 
-复制这个 `id`，替换 `wrangler.toml` 中的 `你的KV_NAMESPACE_ID`。
-
-再创建预览用的：
-```bash
-wrangler kv namespace create STORE --preview
+```
+id = "abc123xxxxxxxxxxxxxxxx"
 ```
 
-同样替换 `你的PREVIEW_KV_ID`。
+打开 `wrangler.toml`，把 `你的KV_NAMESPACE_ID` 替换成这串 ID。
 
 ### 5. 部署
 
@@ -59,10 +61,9 @@ wrangler kv namespace create STORE --preview
 npm run deploy
 ```
 
-部署成功后会输出你的网址，类似：
-```
-https://burn-after-reading.你的用户名.workers.dev
-```
+部署成功后会输出访问地址。
+
+> 注意：`.workers.dev` 域名在国内被墙，需要绑定自己的域名才能直接访问。
 
 ## 使用方法
 
